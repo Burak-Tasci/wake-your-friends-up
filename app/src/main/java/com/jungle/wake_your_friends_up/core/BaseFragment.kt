@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.jungle.wake_your_friends_up.ui.dialog.ErrorDialogFragment
+import com.jungle.wake_your_friends_up.ui.dialog.InformationDialogFragment
 import com.jungle.wake_your_friends_up.ui.dialog.LoadingDialogFragment
 
 /**
@@ -25,6 +27,14 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     protected val loadingDialog by lazy {
         LoadingDialogFragment(requireActivity().supportFragmentManager)
+    }
+
+    protected val informationDialog by lazy {
+        InformationDialogFragment(requireActivity().supportFragmentManager)
+    }
+
+    protected val errorDialog by lazy {
+        ErrorDialogFragment(requireActivity().supportFragmentManager)
     }
 
     // The local _binding parameter which is only available

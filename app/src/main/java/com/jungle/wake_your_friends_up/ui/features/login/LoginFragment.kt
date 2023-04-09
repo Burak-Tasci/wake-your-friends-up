@@ -50,6 +50,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
                             "Reset link was sent to",
                             Toast.LENGTH_LONG
                         ).show()
+
                     }
                     is NetworkResult.Error -> {
                         Log.e("Login Fragment", it.error.message)
@@ -69,6 +70,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
                     is NetworkResult.Success -> {
                         loadingDialog.hide()
                         // TODO: navigate inside the app with uid
+                        //Test
+//                        informationDialog.show()
+                        errorDialog.show()
                         Toast.makeText(
                             context,
                             "${it.body.uid} successfully login",
